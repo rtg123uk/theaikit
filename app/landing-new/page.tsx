@@ -17,15 +17,19 @@ import FinalCTASection from '@/components/FinalCTASection';
 import WhyDifferentSection from '@/components/WhyDifferentSection';
 import SignupPopup from '@/components/SignupPopup';
 import ProgramContentModal from '@/components/ProgramContentModal';
+import ConsultationButton from '@/components/ConsultationButton';
+import ConsultationModal from '@/components/ConsultationModal';
 
 export default function LandingNew() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isExitPopupOpen, setIsExitPopupOpen] = useState(false);
   const [exitEmail, setExitEmail] = useState('');
   const [isProgramModalOpen, setIsProgramModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
   const [playbookEmail, setPlaybookEmail] = useState('');
   const [playbookSuccess, setPlaybookSuccess] = useState(false);
   const [playbookError, setPlaybookError] = useState('');
+  const [showStickyCTA, setShowStickyCTA] = useState(false);
 
 
 
@@ -73,6 +77,17 @@ export default function LandingNew() {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, [isExitPopupOpen]);
+
+  // Sticky CTA scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      setShowStickyCTA(scrollPercentage > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleExitEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -130,12 +145,12 @@ export default function LandingNew() {
             <Clock className="w-4 h-4" />
             <span className="text-sm font-semibold">Only 12 kits left this month</span>
           </div>
-          <button 
-            onClick={() => setIsPopupOpen(true)}
-            className="bg-white text-green-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors"
-          >
-            Get Instant Access
-          </button>
+                                           <button 
+              onClick={() => setIsConsultationModalOpen(true)}
+              className="bg-white text-green-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors"
+            >
+              Book 1:1 Call
+            </button>
         </div>
       </div>
 
@@ -178,17 +193,17 @@ export default function LandingNew() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button 
-              onClick={() => setIsPopupOpen(true)}
+              onClick={() => setIsConsultationModalOpen(true)}
               className="bg-green-500 hover:bg-green-600 text-white text-lg md:text-xl px-8 md:px-12 py-4 md:py-6 rounded-full font-bold shadow-2xl transition-all flex items-center"
             >
-              Get Instant Access
+              Book 1:1 Consultation
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 ml-2" />
             </button>
             <button 
-              onClick={() => setIsProgramModalOpen(true)}
+              onClick={() => setIsPopupOpen(true)}
               className="bg-white/10 hover:bg-white/20 text-white text-lg px-8 py-4 rounded-full font-semibold transition-all flex items-center"
             >
-              See What's Inside
+              Get Access Now
               <ArrowRight className="w-5 h-5 ml-2" />
             </button>
           </div>
@@ -198,6 +213,40 @@ export default function LandingNew() {
           </p>
         </div>
              </section>
+
+       {/* CTA Section Directly Beneath Hero */}
+       <section className="py-12 bg-gradient-to-r from-blue-50 to-indigo-50 border-b">
+         <div className="container mx-auto px-4">
+           <div className="max-w-3xl mx-auto text-center">
+             <div className="bg-white rounded-2xl p-8 shadow-lg border">
+               <div className="flex items-center justify-center mb-4">
+                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                   <span className="text-2xl">👋</span>
+                 </div>
+                 <div className="text-left">
+                   <h3 className="text-xl font-bold text-gray-900">Not sure if it's right for you?</h3>
+                   <p className="text-gray-600 text-sm">Book a free 1:1 strategy call and we'll help you map out your plan.</p>
+                 </div>
+               </div>
+               
+               <div className="flex items-center justify-center mb-6">
+                 <div className="flex items-center text-sm text-green-600 font-semibold">
+                   <CheckCircle2 className="w-4 h-4 mr-1" />
+                   No pressure. Just real advice.
+                 </div>
+               </div>
+               
+               <button 
+                 onClick={() => setIsConsultationModalOpen(true)}
+                 className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-full font-bold shadow-lg transition-all flex items-center mx-auto"
+               >
+                 👉 Book My Free Call
+                 <ArrowRight className="w-5 h-5 ml-2" />
+               </button>
+             </div>
+           </div>
+         </div>
+       </section>
 
        {/* Early Testimonial Section */}
        <section className="bg-white py-12 border-b">
@@ -355,16 +404,7 @@ export default function LandingNew() {
              </div>
            </div>
 
-           {/* CTA Button */}
-           <div className="text-center flex justify-center">
-             <button 
-               onClick={() => setIsProgramModalOpen(true)}
-               className="bg-green-500 hover:bg-green-600 text-white text-lg px-8 py-4 rounded-full font-bold shadow-lg transition-all flex items-center gap-2"
-             >
-               See What's Included
-               <ArrowRight className="w-5 h-5" />
-             </button>
-           </div>
+           
          </div>
        </section>
 
@@ -379,6 +419,95 @@ export default function LandingNew() {
       <InstructorSection />
       <FormulaSection />
       <WhyDifferentSection />
+      
+      
+      
+      {/* Consultation Section */}
+      <section className="py-16 bg-gradient-to-r from-purple-50 to-indigo-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <span className="inline-block bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                👋 Not Sure Which Option is Right for You?
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Book a Free 1:1 Consultation
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Let's walk you through everything you need to know to make the right decision for your AI business journey.
+              </p>
+            </div>
+            
+                         <div className="max-w-2xl mx-auto mb-12">
+               <div className="bg-white rounded-2xl p-8 shadow-lg border">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                    <TrendingUp className="w-8 h-8 text-indigo-600" />
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-xl font-bold">30-Minute Deep Dive</h3>
+                    <p className="text-gray-600 text-sm">Comprehensive strategy session</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-3 mb-6 text-left">
+                  <div className="flex items-center text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
+                    Detailed niche analysis & market research
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
+                    How to land your first client fast
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
+                    What's inside the kit + how to use it
+                  </div>
+                  <div className="flex items-center text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-green-500 mr-2" />
+                    How to get started this week
+                  </div>
+                </div>
+                
+                                                                                                                                       <button 
+                     onClick={() => setIsConsultationModalOpen(true)}
+                     className="block w-full bg-indigo-600 hover:bg-indigo-700 text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors"
+                   >
+                     Book Your Free Call
+                   </button>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-8 text-white">
+              <h3 className="text-2xl font-bold mb-4">Why Book a Consultation?</h3>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Personalized Strategy</h4>
+                  <p className="text-purple-100 text-sm">Get advice tailored to your specific background and goals</p>
+                </div>
+                <div>
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Clock className="w-6 h-6" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Save Time</h4>
+                  <p className="text-purple-100 text-sm">Skip the trial and error with expert guidance</p>
+                </div>
+                <div>
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Zap className="w-6 h-6" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Fast Track Success</h4>
+                  <p className="text-purple-100 text-sm">Learn proven strategies to get your first client quickly</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <ProgramDetailsSection />
       <BonusesSection />
       <TestimonialsSection />
@@ -610,6 +739,33 @@ export default function LandingNew() {
          isOpen={isProgramModalOpen}
          onClose={() => setIsProgramModalOpen(false)}
        />
-     </div>
-   )
+       
+               {/* Sticky Consultation Button */}
+        <ConsultationButton onOpenModal={() => setIsConsultationModalOpen(true)} />
+        
+        {/* Consultation Modal */}
+        <ConsultationModal 
+          isOpen={isConsultationModalOpen} 
+          onClose={() => setIsConsultationModalOpen(false)} 
+        />
+        
+        {/* Sticky Footer CTA */}
+        {showStickyCTA && (
+          <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 px-4 z-50 shadow-lg transform transition-transform duration-300">
+            <div className="container mx-auto flex justify-between items-center">
+              <div className="flex items-center space-x-2">
+                <span className="text-sm font-semibold">Need help deciding?</span>
+              </div>
+              <button 
+                onClick={() => setIsConsultationModalOpen(true)}
+                className="bg-white text-purple-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors flex items-center"
+              >
+                Book Your Free Strategy Call
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    )
 } 

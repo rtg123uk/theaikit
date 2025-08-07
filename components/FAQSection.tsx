@@ -28,6 +28,10 @@ const faqs = [
   {
     question: "How long before I see results?",
     answer: "Most users send their first outreach within 48–72 hours and close a client in their first 2–4 weeks."
+  },
+  {
+    question: "What if I'm not sure which package to choose?",
+    answer: "Book a free 1:1 call and we'll help you work it out. We'll assess your background, goals, and budget to recommend the best option for you. No pressure, just honest advice."
   }
 ];
 
