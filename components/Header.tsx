@@ -69,14 +69,6 @@ export default function Header({ onApplyClick, onConsultationClick }: HeaderProp
             <Calendar className="w-4 h-4 text-white" />
             Free Consultation
           </a>
-          <button
-            onClick={() => { if (onConsultationClick) onConsultationClick(); }}
-            className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-6 py-2 rounded-full font-semibold transition shadow-lg items-center gap-2 focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 hover:shadow-indigo-400/40 flex"
-          >
-            <Calendar className="w-5 h-5 text-white" />
-            Book 1:1 Consultation
-            <span className="ml-1">➔</span>
-          </button>
         </div>
         <button
           className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -130,14 +122,6 @@ export default function Header({ onApplyClick, onConsultationClick }: HeaderProp
               <Calendar className="w-6 h-6 text-white" />
               Free Consultation
             </a>
-            <button
-              onClick={() => { setMobileOpen(false); if (onConsultationClick) onConsultationClick(); }}
-              className="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-xl focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 hover:shadow-indigo-400/40 w-full justify-center"
-            >
-              <Calendar className="w-6 h-6 text-white" />
-              Book 1:1 Consultation
-              <span className="ml-1">➔</span>
-            </button>
           </nav>
         </div>
       )}

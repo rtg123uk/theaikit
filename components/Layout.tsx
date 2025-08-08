@@ -12,7 +12,6 @@ import Header from './Header'
 import Footer from './Footer'
 import React from 'react'
 import { CheckCircle2 } from 'lucide-react'
-import EmailSubscribePopup from './EmailSubscribePopup'
 
 interface LayoutProps {
   children: ReactNode
@@ -73,7 +72,6 @@ export default function Layout({ children }: LayoutProps) {
       </main>
       {!isLandingNew && <Footer />}
       <CookieConsent />
-      {!isLandingNew && <EmailSubscribePopup />}
     </div>
   )
 }
