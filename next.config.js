@@ -1,28 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
-  experimental: {
-    // Disable Edge Runtime for Sanity Studio
-    runtime: 'nodejs',
-  },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        pathname: '/images/**',
-      },
-    ],
     domains: ['cdnjs.cloudflare.com'],
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
     return [
-      {
-        source: '/studio',
-        destination: '/studio/index',
-        permanent: true,
-      },
       {
         source: '/:path*',
         destination: 'https://aiagencystartup.com/:path*',
