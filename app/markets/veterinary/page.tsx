@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, MessageSquare, Mail, Users, FileText, Heart, Paw, CheckCircle2, Clock, Shield, Zap } from 'lucide-react';
+import { ArrowRight, MessageSquare, Mail, Users, FileText, Heart, CheckCircle2, Clock, Shield, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 export default function VeterinaryPage() {
