@@ -3,7 +3,6 @@ import HeroSection from '@/components/HeroSection'
 import StatsSection from '@/components/StatsSection'
 import IncludedSection from '@/components/IncludedSection'
 import HowItWorksSection from '@/components/HowItWorksSection'
-import InstructorSection from '@/components/InstructorSection'
 import FormulaSection from '@/components/FormulaSection'
 import ProgramDetailsSection from '@/components/ProgramDetailsSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
@@ -23,7 +22,6 @@ export default function Home() {
       <HowItWorksSection />
       <FormulaSection />
       <WhyDifferentSection />
-      <InstructorSection />
       <ProgramDetailsSection />
       <TestimonialsSection />
       <BonusesSection />
