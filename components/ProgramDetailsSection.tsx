@@ -91,14 +91,14 @@ export default function ProgramDetailsSection() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-white to-slate-50 py-20">
+    <section className="bg-white py-20">
       <div className="container mx-auto flex flex-col items-center">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
             Choose Your Package
           </h2>
           <p className="text-lg text-muted-foreground">
-            Select the AI Agency Starter Kit package that best fits your goals. All packages include lifetime access and white-label rights.
+            Select The AI Agency Kit package that best fits your goals. All packages include lifetime access and white-label rights.
           </p>
         </div>
         <div className="flex flex-col gap-10 w-full max-w-xl">

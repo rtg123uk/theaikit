@@ -53,21 +53,18 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
             </p>
           </div>
 
-          {/* Calendly Embed - Much More Prominent */}
-            <div className="flex-1 p-6 flex flex-col overflow-visible lg:overflow-hidden">
-            <div className="text-center mb-4">
+          {/* Contact Section */}
+            <div className="flex-1 p-6 flex flex-col items-center justify-center">
+            <div className="text-center mb-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Ready to Get Started?</h3>
-              <p className="text-gray-600 text-sm">Choose your preferred consultation time below</p>
-            </div>
-            <div className="h-[85vh] lg:min-h-0 lg:h-auto"> {/* Larger height on mobile for Calendly visibility */}
-              <iframe
-                src="https://calendly.com/onboarding-aiagencystartup"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                title="Book Consultation"
-                className="rounded-lg"
-              />
+              <p className="text-gray-600 text-sm mb-6">Get in touch with us to schedule your consultation</p>
+              <a
+                href="/contact"
+                onClick={onClose}
+                className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg"
+              >
+                Go to Contact Page
+              </a>
             </div>
           </div>
         </div>

@@ -1,294 +1,303 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Building2, ShoppingBag, Briefcase, Stethoscope, GraduationCap, Utensils, Truck, Factory, Home, Heart, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-// Font Awesome imports
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBuilding, faShoppingBag, faBriefcase, faStethoscope, faGraduationCap, faUtensils, faTruck, faIndustry, faHome, faClinicMedical, faPaw } from '@fortawesome/free-solid-svg-icons';
 
 export default function MarketsPage() {
   const industries = [
     {
-      icon: <FontAwesomeIcon icon={faBuilding} className="w-8 h-8" />,
+      icon: Building2,
       title: "Professional Services",
-      description: "Transform client engagement and streamline operations for law firms, accounting practices, and consulting businesses.",
+      description: "Revolutionize customer interaction and optimize workflows for legal practices, accounting firms, and advisory organizations.",
       benefits: [
-        "Website & chat automation for client enquiries",
-        "Automated email follow-ups",
-        "Lead generation for new clients",
-        "AI-powered content for blogs and newsletters"
+        "Website and conversational automation for customer inquiries",
+        "Automated email sequences",
+        "Prospect generation for new customers",
+        "Intelligent content creation for blogs and communications"
       ],
-      link: "/markets/professional-services"
+      link: "/markets/professional-services",
+      color: "blue"
     },
     {
-      icon: <FontAwesomeIcon icon={faShoppingBag} className="w-8 h-8" />,
+      icon: ShoppingBag,
       title: "Retail & E-commerce",
-      description: "Enhance customer experience and boost sales through intelligent automation solutions.",
+      description: "Improve customer engagement and increase revenue through smart automation frameworks.",
       benefits: [
-        "Chatbots for product questions and order support",
-        "Automated email marketing & cart reminders",
-        "Lead generation for new customers",
-        "AI content for product descriptions & blogs"
+        "Conversational interfaces for product inquiries and order assistance",
+        "Automated email campaigns and shopping cart notifications",
+        "Prospect generation for new clients",
+        "Intelligent content for product details and blogs"
       ],
-      link: "/markets/retail-e-commerce"
+      link: "/markets/retail-e-commerce",
+      color: "purple"
     },
     {
-      icon: <FontAwesomeIcon icon={faBriefcase} className="w-8 h-8" />,
+      icon: Briefcase,
       title: "Financial Services",
-      description: "Streamline financial operations and improve customer service in banking and insurance.",
+      description: "Optimize financial processes and enhance customer support in banking and insurance sectors.",
       benefits: [
-        "Secure chatbots for FAQs & appointments",
-        "Automated onboarding & compliance emails",
-        "Lead generation for financial clients",
-        "AI content for newsletters & guides"
+        "Secure conversational systems for FAQs and scheduling",
+        "Automated setup and regulatory email sequences",
+        "Prospect generation for financial customers",
+        "Intelligent content for communications and guides"
       ],
-      link: "/markets/financial-services"
+      link: "/markets/financial-services",
+      color: "green"
     },
     {
-      icon: <FontAwesomeIcon icon={faClinicMedical} className="w-8 h-8" />,
+      icon: Stethoscope,
       title: "Healthcare",
-      description: "Patient intake, appointment scheduling, and medical content automation",
+      description: "Patient registration, scheduling coordination, and medical information automation",
       benefits: [
-        "Chatbots for patient questions & bookings",
-        "Automated appointment reminders",
-        "Lead generation for clinics",
-        "AI content for health blogs & updates"
+        "Conversational systems for patient inquiries and reservations",
+        "Automated scheduling notifications",
+        "Prospect generation for medical facilities",
+        "Intelligent content for health blogs and updates"
       ],
-      link: "/markets/healthcare"
+      link: "/markets/healthcare",
+      color: "red"
     },
     {
-      icon: <FontAwesomeIcon icon={faGraduationCap} className="w-8 h-8" />,
+      icon: GraduationCap,
       title: "Education",
-      description: "Enhance learning experiences and administrative efficiency in educational institutions.",
+      description: "Improve learning outcomes and administrative productivity in educational organizations.",
       benefits: [
-        "Chatbots for course info & enrolment",
-        "Automated class & event reminders",
-        "Lead generation for training providers",
-        "AI content for newsletters & blogs"
+        "Conversational interfaces for course information and registration",
+        "Automated class and event notifications",
+        "Prospect generation for educational providers",
+        "Intelligent content for communications and blogs"
       ],
-      link: "/markets/education"
+      link: "/markets/education",
+      color: "indigo"
     },
     {
-      icon: <FontAwesomeIcon icon={faUtensils} className="w-8 h-8" />,
+      icon: Utensils,
       title: "Hospitality",
-      description: "Elevate guest experiences and streamline operations in hotels and restaurants.",
+      description: "Enhance guest satisfaction and optimize operations in hotels and dining establishments.",
       benefits: [
-        "Chatbots for bookings & guest requests",
-        "Automated email campaigns & offers",
-        "Lead generation for local businesses",
-        "AI content for promotions & blogs"
+        "Conversational systems for reservations and guest services",
+        "Automated email marketing and promotional offers",
+        "Prospect generation for local enterprises",
+        "Intelligent content for promotions and blogs"
       ],
-      link: "/markets/hospitality"
+      link: "/markets/hospitality",
+      color: "orange"
     },
     {
-      icon: <FontAwesomeIcon icon={faTruck} className="w-8 h-8" />,
+      icon: Truck,
       title: "Logistics & Transport",
-      description: "Optimise operations and improve customer service in transportation and delivery.",
+      description: "Streamline processes and enhance customer support in transportation and delivery services.",
       benefits: [
-        "Chatbots for delivery queries & tracking",
-        "Automated delivery updates & feedback",
-        "Lead generation for logistics",
-        "AI content for service updates & blogs"
+        "Conversational interfaces for delivery inquiries and tracking",
+        "Automated delivery notifications and feedback collection",
+        "Prospect generation for logistics companies",
+        "Intelligent content for service communications and blogs"
       ],
-      link: "/markets/logistics-transport"
+      link: "/markets/logistics-transport",
+      color: "teal"
     },
     {
-      icon: <FontAwesomeIcon icon={faIndustry} className="w-8 h-8" />,
+      icon: Factory,
       title: "Manufacturing",
-      description: "Enhance production efficiency and customer service in manufacturing operations.",
+      description: "Improve production effectiveness and customer assistance in manufacturing operations.",
       benefits: [
-        "Chatbots for order queries & support",
-        "Automated order & production updates",
-        "Lead generation for manufacturers",
-        "AI content for product updates & blogs"
+        "Conversational systems for order inquiries and support",
+        "Automated order and production notifications",
+        "Prospect generation for manufacturing firms",
+        "Intelligent content for product communications and blogs"
       ],
-      link: "/markets/manufacturing"
+      link: "/markets/manufacturing",
+      color: "gray"
     },
     {
-      icon: <FontAwesomeIcon icon={faHome} className="w-8 h-8" />,
+      icon: Home,
       title: "Real Estate",
-      description: "Streamline property management and enhance client relationships.",
+      description: "Optimize property administration and strengthen customer connections.",
       benefits: [
-        "Chatbots for property queries & viewings",
-        "Automated property alerts & reminders",
-        "Lead generation for estate agents",
-        "AI content for property descriptions & blogs"
+        "Conversational interfaces for property inquiries and viewing arrangements",
+        "Automated property notifications and reminders",
+        "Prospect generation for real estate professionals",
+        "Intelligent content for property details and blogs"
       ],
-      link: "/markets/real-estate"
+      link: "/markets/real-estate",
+      color: "amber"
     },
     {
-      icon: <FontAwesomeIcon icon={faPaw} className="w-8 h-8" />,
+      icon: Heart,
       title: "Veterinary",
-      description: "Pet care automation, appointment scheduling, and veterinary content",
+      description: "Pet care automation, scheduling coordination, and veterinary information systems",
       benefits: [
-        "Chatbots for pet care queries",
-        "Automated appointment reminders",
-        "Lead generation for veterinary clinics",
-        "AI content for pet health & care blogs"
+        "Conversational systems for pet care inquiries",
+        "Automated scheduling notifications",
+        "Prospect generation for veterinary facilities",
+        "Intelligent content for pet health and care blogs"
       ],
-      link: "/markets/veterinary"
+      link: "/markets/veterinary",
+      color: "pink"
     }
   ];
 
+  const colorClasses = {
+    blue: "bg-blue-100 text-blue-700 border-blue-200",
+    purple: "bg-purple-100 text-purple-700 border-purple-200",
+    green: "bg-green-100 text-green-700 border-green-200",
+    red: "bg-red-100 text-red-700 border-red-200",
+    indigo: "bg-indigo-100 text-indigo-700 border-indigo-200",
+    orange: "bg-orange-100 text-orange-700 border-orange-200",
+    teal: "bg-teal-100 text-teal-700 border-teal-200",
+    gray: "bg-gray-100 text-gray-700 border-gray-200",
+    amber: "bg-amber-100 text-amber-700 border-amber-200",
+    pink: "bg-pink-100 text-pink-700 border-pink-200"
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Card-style Header Section */}
-      <section className="relative min-h-[80vh] bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
-        {/* Background Grid Pattern */}
-        <div className="absolute inset-0 bg-grid-white/10" />
+    <main className="min-h-screen bg-white">
+      {/* Unique Hero - Minimal with Large Title */}
+      <section className="relative py-32 bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-200 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-200 rounded-full blur-3xl opacity-30"></div>
         
-        {/* Main Content */}
-        <div className="relative container mx-auto px-4 py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Tailored AI Automation for Every Niche
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-indigo-200 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-8">
+              <Sparkles className="w-4 h-4" />
+              <span>Industry-Specific Solutions</span>
+            </div>
+            <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+              Automation Solutions for Every Industry
             </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Launch industry-ready solutions to your targeted audience.
+            <p className="text-2xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Deploy sector-specific frameworks tailored to your target market. Each industry solution is designed for maximum impact.
             </p>
-
-            {/* Industry Icons Bar */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faClinicMedical} className="w-5 h-5" />
-                <span>Healthcare</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faGraduationCap} className="w-5 h-5" />
-                <span>Education</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faBriefcase} className="w-5 h-5" />
-                <span>Finance</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faShoppingBag} className="w-5 h-5" />
-                <span>Retail</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faIndustry} className="w-5 h-5" />
-                <span>Manufacturing</span>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <div className="flex justify-center">
-              <a 
-                href="#industry-solutions"
-                className="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 flex items-center gap-2"
-              >
-                Explore Your Sector
-                <ArrowRight className="w-5 h-5" />
-              </a>
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              <span className="bg-white border-2 border-indigo-200 rounded-lg px-4 py-2 text-gray-700 font-medium">Healthcare</span>
+              <span className="bg-white border-2 border-purple-200 rounded-lg px-4 py-2 text-gray-700 font-medium">Finance</span>
+              <span className="bg-white border-2 border-blue-200 rounded-lg px-4 py-2 text-gray-700 font-medium">Retail</span>
+              <span className="bg-white border-2 border-green-200 rounded-lg px-4 py-2 text-gray-700 font-medium">Education</span>
+              <span className="bg-white border-2 border-orange-200 rounded-lg px-4 py-2 text-gray-700 font-medium">Real Estate</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Industry Grid */}
-      <section className="py-16 bg-white">
+      {/* Quick Stats */}
+      <section className="py-12 bg-indigo-600 text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Choose Your Industry</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
-            {industries.map((industry, index) => (
-              <a 
-                key={index}
-                href={`#${industry.title.toLowerCase().replace(/\s+/g, '-')}`}
-                className="flex flex-col items-center p-6 bg-gray-50 rounded-xl hover:bg-indigo-50 transition-colors group"
-              >
-                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-600 transition-colors">
-                  {React.cloneElement(industry.icon, { className: "w-6 h-6 text-indigo-600 group-hover:text-white transition-colors" })}
-                </div>
-                <span className="text-center font-medium text-gray-700 group-hover:text-indigo-600">{industry.title}</span>
-              </a>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center">
+            <div>
+              <div className="text-4xl font-bold mb-2">10+</div>
+              <div className="text-indigo-100">Industries</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">500+</div>
+              <div className="text-indigo-100">Templates</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">1000+</div>
+              <div className="text-indigo-100">Leads Per Industry</div>
+            </div>
+            <div>
+              <div className="text-4xl font-bold mb-2">24/7</div>
+              <div className="text-indigo-100">Support</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="py-16 bg-white">
+      {/* Industries Grid - Card Style */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">The Power of AI Automation</h2>
-            <p className="text-lg text-gray-600 mb-8">
-              In today's competitive business landscape, the key to success isn't just about having the latest technology—it's about how you use it to create meaningful business outcomes. Our AI automation solutions focus on delivering tangible benefits that matter to your business and your customers.
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Choose Your Industry</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Each industry solution includes specialized templates, lead lists, and automation frameworks
             </p>
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-              <div className="p-6 bg-gray-50 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">Enhanced Efficiency</h3>
-                <p className="text-gray-600">Automate routine tasks and free up your clients team to focus on high-value activities that drive growth.</p>
-              </div>
-              <div className="p-6 bg-gray-50 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">Improved Customer Experience</h3>
-                <p className="text-gray-600">Deliver personalised, 24/7 support that keeps your customers engaged and satisfied. Trained, very specifically on your clients business and needs.</p>
-              </div>
-              <div className="p-6 bg-gray-50 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3">Scalable Operations</h3>
-                <p className="text-gray-600">Grow your business without proportionally increasing your operational costs.</p>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Industries Grid */}
-      <section id="industry-solutions" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Industry Solutions</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {industries.map((industry, index) => (
-              <div 
-                key={index}
-                id={industry.title.toLowerCase().replace(/\s+/g, '-')}
-                className="bg-white rounded-xl p-6 hover:shadow-xl transition-all duration-300 group border border-gray-100 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-indigo-600 transition-colors">
-                      {React.cloneElement(industry.icon, { className: "w-6 h-6 text-indigo-600 group-hover:text-white transition-colors" })}
-                    </div>
-                    <h3 className="text-xl font-semibold">{industry.title}</h3>
+            {industries.map((industry, index) => {
+              const Icon = industry.icon;
+              const colorClass = colorClasses[industry.color as keyof typeof colorClasses];
+              return (
+                <div 
+                  key={index}
+                  className="bg-white rounded-2xl border-2 border-gray-100 p-8 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group"
+                >
+                  <div className={`w-16 h-16 ${colorClass} rounded-xl flex items-center justify-center mb-6 border-2`}>
+                    <Icon className="w-8 h-8" />
                   </div>
-                  <p className="text-gray-600 mb-4">{industry.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {industry.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-center text-gray-700">
-                        <ArrowRight className="w-4 h-4 text-indigo-600 mr-2" />
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-indigo-600 transition-colors">{industry.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{industry.description}</p>
+                  <ul className="space-y-3 mb-6">
+                    {industry.benefits.slice(0, 2).map((benefit, benefitIndex) => (
+                      <li key={benefitIndex} className="flex items-start text-sm text-gray-700">
+                        <ArrowRight className="w-4 h-4 text-indigo-600 mr-2 mt-0.5 shrink-0" />
                         {benefit}
                       </li>
                     ))}
                   </ul>
+                  <Link 
+                    href={industry.link}
+                    className="inline-flex items-center gap-2 text-indigo-600 font-semibold hover:text-indigo-700 transition-colors"
+                  >
+                    Learn More
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
-                <a href={industry.link} className="mt-auto inline-block bg-sky-600 hover:bg-sky-700 text-white px-6 py-2 rounded-md font-semibold transition-colors text-center">
-                  Discover More
-                </a>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/10" />
-        <div className="container mx-auto px-4 text-center relative">
-          <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Discover how our AI automation solutions can help you achieve your clients business goals, regardless of your industry.
+      {/* Benefits Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-indigo-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-16">Why Industry-Specific Solutions Matter</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Sparkles className="w-8 h-8 text-indigo-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Tailored Solutions</h3>
+                <p className="text-gray-600">Each industry has unique needs. Our solutions are specifically designed for your sector.</p>
+              </div>
+              <div className="bg-white rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Building2 className="w-8 h-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Proven Templates</h3>
+                <p className="text-gray-600">Ready-to-use templates that have been tested and optimized for your industry.</p>
+              </div>
+              <div className="bg-white rounded-xl p-8 text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <ArrowRight className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Faster Results</h3>
+                <p className="text-gray-600">Industry-specific solutions mean faster implementation and quicker ROI.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Industry?</h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Learn how our industry-specific automation frameworks can help you reach your business objectives.
           </p>
           <Link 
             href="/program"
-            className="inline-block bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg group"
+            className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <span className="flex items-center">
-              Get Started Now
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </span>
+            Get Started Now
+            <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </section>
     </main>
   );
-} 
+}

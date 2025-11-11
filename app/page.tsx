@@ -21,12 +21,12 @@ export default function Home() {
       <StatsSection />
       <IncludedSection />
       <HowItWorksSection />
-      <InstructorSection />
       <FormulaSection />
       <WhyDifferentSection />
+      <InstructorSection />
       <ProgramDetailsSection />
-      <BonusesSection />
       <TestimonialsSection />
+      <BonusesSection />
       <AudienceSection />
       <FAQSection />
       <FinalCTASection />

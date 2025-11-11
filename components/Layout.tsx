@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ReactNode, useState } from 'react'
-import CountdownHeader from './CountdownHeader'
 import SignupPopup from './SignupPopup'
 import CookieConsent from './CookieConsent'
 import { Menu, X } from 'lucide-react'
@@ -58,12 +57,11 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {!isLandingNew && <CountdownHeader />}
       {!isLandingNew && <Header onApplyClick={() => handleOpen('essential')} />}
       <SignupPopup
         isOpen={isPopupOpen}
         onClose={handleClose}
-        title="Apply for the AI Agency Starter Kit"
+        title="Apply for The AI Agency Kit"
         subtitle="Select your preferred package and enter your details. We'll be in touch soon."
         selectedPackage={selectedPackage}
       />

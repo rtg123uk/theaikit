@@ -21,32 +21,32 @@ export default function HeroSection() {
             {/* Left Column - Text Content */}
             <div className="text-white">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Launch Your AI Automation Agency in Days
+                Build Your AI Business Empire in Under a Week
               </h1>
               <p className="text-xl text-gray-300 mb-8">
-                Your AI Agency. Done for You. Ready to Launch.
+                Complete AI Agency Solution. Fully Prepared. Start Immediately.
               </p>
               
               {/* Key Benefits */}
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
-                  <span className="text-gray-200">Done-for-you leads & templates</span>
+                  <span className="text-gray-200">Pre-built templates and qualified prospects</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
-                  <span className="text-gray-200">Launch in 72 hours</span>
+                  <span className="text-gray-200">Operational within 7 days</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-6 h-6 text-green-400" />
-                  <span className="text-gray-200">No coding required</span>
+                  <span className="text-gray-200">Zero technical knowledge needed</span>
                 </div>
               </div>
 
               {/* CTA Button */}
               <Button size="lg" className="bg-indigo-500 hover:bg-indigo-600 text-lg px-8 py-6 rounded-full" asChild>
                 <Link href="/program" className="flex items-center gap-2">
-                  View the Full Kit
+                  Explore Complete Package
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>

@@ -7,50 +7,50 @@ const differentiators = [
   {
     emoji: "1️⃣",
     icon: MessageSquare,
-    title: "Ready-to-Use Sales Kit",
-    subtitle: "Not Just Theory",
-    description: "Most AI courses teach you how to build - we give you everything you need to sell. From proposal templates to cold email sequences, you'll have a complete sales toolkit ready to deploy."
+    title: "Complete Sales Framework",
+    subtitle: "Beyond Concepts",
+    description: "Most automation courses focus on development - we provide all resources required for sales. From proposal formats to outreach email sequences, you'll have a comprehensive sales system prepared for deployment."
   },
   {
     emoji: "2️⃣",
     icon: Rocket,
-    title: "2,000 Pre-Vetted Leads",
-    subtitle: "Start Selling Day One",
-    description: "Skip the research phase. We've compiled a database of 2,000 niche-specific leads across industries like dental, real estate, legal, and fitness - all ready for your outreach."
+    title: "2,000 Verified Prospects",
+    subtitle: "Begin Selling Immediately",
+    description: "Eliminate the research stage. We've assembled a collection of 2,000 industry-specific prospects across sectors including healthcare, property, legal services, and wellness - all prepared for your contact efforts."
   },
   {
     emoji: "3️⃣",
     icon: Play,
-    title: "White-Label Delivery",
-    subtitle: "No Technical Skills Needed",
-    description: "You won't need to code or build anything. We show you how to deliver high-value AI services using proven third-party tools that you can white-label as your own."
+    title: "Branded Service Delivery",
+    subtitle: "Zero Technical Expertise Required",
+    description: "You won't need to program or construct anything. We demonstrate how to provide premium automation services using validated external platforms that you can rebrand as your own."
   },
   {
     emoji: "4️⃣",
     icon: Users,
-    title: "Proven Sales Process",
-    subtitle: "Follow the Script",
-    description: "We've tested and refined our sales approach with hundreds of clients. You'll get exact scripts, templates, and strategies that have already generated results."
+    title: "Validated Sales Methodology",
+    subtitle: "Execute the Framework",
+    description: "We've tested and optimized our sales methodology with numerous customers. You'll receive precise scripts, formats, and tactics that have already produced outcomes."
   },
   {
     emoji: "5️⃣",
     icon: Target,
-    title: "Lifetime Access",
-    subtitle: "Always Up-to-Date",
-    description: "One-time purchase includes lifetime updates to our templates, training, and tools. You'll always have the latest assets to keep your agency ahead of the curve."
+    title: "Permanent Access",
+    subtitle: "Continuously Current",
+    description: "Single payment grants permanent access to all template updates, educational content, and tools. You'll consistently have the most recent resources to maintain your business's competitive edge."
   }
 ];
 
 export default function WhyDifferentSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-slate-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            Why We're Different
+          <h2 className="text-4xl md:text-5xl font-sans font-bold mb-6">
+            What Sets Us Apart
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            This isn't just another AI course. Here's what makes our Agency Starter Kit truly unique:
+            This isn't just another AI course. Here's what makes The AI Agency Kit truly unique:
           </p>
         </div>
 

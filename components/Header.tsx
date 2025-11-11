@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Rocket, Zap, Menu, X, Calendar } from 'lucide-react';
+import { Rocket, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 interface HeaderProps {
@@ -28,48 +28,29 @@ export default function Header({ onApplyClick, onConsultationClick }: HeaderProp
   }, [mobileOpen]);
 
   const navLinks = [
-    { href: '/about', label: 'About' },
-    { href: '/why-us', label: 'Why Us' },
-    { href: '/markets', label: 'Markets' },
-    { href: '/program', label: 'Our Kits', badge: 'Popular' },
-    { href: '/testimonials', label: 'Testimonials' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/about', label: 'About Us' },
+    { href: '/why-us', label: 'Why Choose Us' },
+    { href: '/markets', label: 'Industries' },
+    { href: '/program', label: 'Packages' },
+    { href: '/testimonials', label: 'Success Stories' },
+    { href: '/contact', label: 'Get In Touch' },
   ];
 
   return (
     <header className="w-full sticky top-0 z-50 bg-[#151C2B] text-white shadow-lg backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center gap-2 text-2xl font-display font-bold tracking-tight">
-          <Zap className="w-7 h-7 text-indigo-400" />
-          AI Agency Startup
+        <Link href="/" className="flex items-center gap-2 text-2xl font-sans font-bold tracking-tight">
+          <Rocket className="w-7 h-7 text-indigo-400" />
+          The AI Agency Kit
         </Link>
         <nav className="hidden md:flex gap-8 text-base font-medium items-center">
-          {navLinks.map((link) => link.badge ? (
-            <div key={link.href} className="relative flex flex-col items-center">
-              <Link href={link.href} className="relative transition group">
-                <span className="group-hover:text-indigo-300 transition-colors">{link.label}</span>
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-purple-600 text-xs text-white px-2 py-0.5 rounded-full shadow-md">{link.badge}</span>
-            </div>
-          ) : (
+          {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="relative transition group">
               <span className="group-hover:text-indigo-300 transition-colors">{link.label}</span>
               <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full group-hover:w-full transition-all duration-300"></span>
             </Link>
           ))}
         </nav>
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="https://calendly.com/onboarding-aiagencystartup"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 py-2 rounded-full font-semibold transition shadow-lg items-center gap-2 focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 hover:shadow-purple-400/40 flex"
-          >
-            <Calendar className="w-4 h-4 text-white" />
-            Free Consultation
-          </a>
-        </div>
         <button
           className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"
           onClick={() => setMobileOpen(true)}
@@ -100,28 +81,11 @@ export default function Header({ onApplyClick, onConsultationClick }: HeaderProp
             <X className="w-8 h-8 text-white" />
           </button>
           <nav className="flex flex-col gap-8 text-xl font-semibold items-center w-full mt-16">
-            {navLinks.map((link) => link.badge ? (
-              <div key={link.href} className="relative flex flex-col items-center w-full">
-                <Link href={link.href} onClick={() => setMobileOpen(false)} className="relative transition group w-full text-center">
-                  <span className="group-hover:text-indigo-300 transition-colors">{link.label}</span>
-                </Link>
-                <span className="absolute -top-6 left-1/2 -translate-x-1/2 bg-purple-600 text-xs text-white px-2 py-0.5 rounded-full shadow-md">{link.badge}</span>
-              </div>
-            ) : (
+            {navLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="relative transition group w-full text-center">
                 <span className="group-hover:text-indigo-300 transition-colors">{link.label}</span>
               </Link>
             ))}
-            <a
-              href="https://calendly.com/onboarding-aiagencystartup"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
-              className="mt-8 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg flex items-center gap-2 text-xl focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 hover:shadow-purple-400/40 w-full justify-center"
-            >
-              <Calendar className="w-6 h-6 text-white" />
-              Free Consultation
-            </a>
           </nav>
         </div>
       )}

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { WebVitals } from '@/components/WebVitals'
 import Layout from '@/components/Layout'
@@ -11,23 +11,16 @@ const inter = Inter({
   preload: true,
 })
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
-  preload: true,
-})
-
 export const metadata: Metadata = {
   metadataBase: new URL('https://aiagencystartup.com'),
-  title: 'AI Agency Startup - Empowering entrepreneurs to build successful AI automation businesses.',
+  title: 'The AI Agency Kit - Empowering entrepreneurs to build successful AI automation businesses.',
   description: 'Empowering entrepreneurs to build successful AI automation businesses.',
   keywords: ['AI', 'agency', 'automation', 'business growth', 'solopreneur', 'online business'],
   openGraph: {
-    title: 'AI Agency Startup - Empowering entrepreneurs to build successful AI automation businesses.',
+    title: 'The AI Agency Kit - Empowering entrepreneurs to build successful AI automation businesses.',
     description: 'Empowering entrepreneurs to build successful AI automation businesses.',
     url: 'https://aiagencystartup.com',
-    siteName: 'AI Agency Startup',
+    siteName: 'The AI Agency Kit',
     images: [
       {
         url: '/og-image.jpg',
@@ -40,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Agency Startup - Empowering entrepreneurs to build successful AI automation businesses.',
+    title: 'The AI Agency Kit - Empowering entrepreneurs to build successful AI automation businesses.',
     description: 'Empowering entrepreneurs to build successful AI automation businesses.',
     images: ['/og-image.jpg'],
   },
@@ -52,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

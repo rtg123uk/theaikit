@@ -1,95 +1,160 @@
 'use client';
 
 import React from 'react';
-import { ShoppingBag, ArrowRight, MessageSquare, Mail, Users, Brain } from 'lucide-react';
+import { ArrowRight, MessageSquare, Mail, Users, FileText, ShoppingBag, ShoppingCart, CheckCircle2, Clock, Shield, Zap } from 'lucide-react';
+import Link from 'next/link';
 
 export default function RetailEcommercePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="flex items-center mb-6">
-            <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
-              <ShoppingBag className="w-7 h-7 text-indigo-600" />
+    <main className="min-h-screen bg-white">
+      <section className="relative py-24 bg-gradient-to-br from-purple-50 via-white to-pink-50 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20"></div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                  <ShoppingBag className="w-4 h-4" />
+                  <span>Retail & E-commerce Industry</span>
+                </div>
+                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  AI Automation Solutions for Retail & E-commerce
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  Improve customer engagement and increase revenue through smart automation frameworks designed for retail and e-commerce businesses.
+                </p>
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex items-center gap-2 text-gray-700">
+                    <CheckCircle2 className="w-5 h-5 text-purple-600" />
+                    <span className="font-medium">Customer-Focused</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-700">
+                    <CheckCircle2 className="w-5 h-5 text-purple-600" />
+                    <span className="font-medium">Revenue Growth</span>
+                  </div>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Get Started
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+              <div className="relative">
+                <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+                      <div className="text-3xl font-bold mb-2">24/7</div>
+                      <div className="text-purple-100">Customer Support</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl p-6 text-white">
+                      <div className="text-3xl font-bold mb-2">30%</div>
+                      <div className="text-pink-100">Revenue Increase</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl p-6 text-white">
+                      <div className="text-3xl font-bold mb-2">Fast</div>
+                      <div className="text-rose-100">Checkout</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 rounded-xl p-6 text-white">
+                      <div className="text-3xl font-bold mb-2">Happy</div>
+                      <div className="text-fuchsia-100">Customers</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h1 className="text-4xl font-bold text-sky-700">AI Automation for Retail & E-commerce</h1>
-          </div>
-          <p className="text-lg text-gray-700 mb-8">
-            Help retailers and online shops boost sales, improve customer service, and save time with your AI Automation Business Kit. Everything you need to deliver real, practical value—no technical skills required.
-          </p>
-
-          <h2 className="text-2xl font-semibold mb-4">What You Can Offer</h2>
-          <ul className="space-y-4 mb-8">
-            <li className="flex items-start">
-              <MessageSquare className="w-5 h-5 text-indigo-600 mr-2 mt-1" />
-              <span><strong>Website & Chat Automation:</strong> Set up chatbots to answer product questions, handle order enquiries, and guide customers to the right products 24/7.</span>
-            </li>
-            <li className="flex items-start">
-              <Mail className="w-5 h-5 text-indigo-600 mr-2 mt-1" />
-              <span><strong>Email Marketing Automation:</strong> Automate abandoned cart reminders, promotional campaigns, and customer follow-ups to increase repeat sales.</span>
-            </li>
-            <li className="flex items-start">
-              <Users className="w-5 h-5 text-indigo-600 mr-2 mt-1" />
-              <span><strong>Lead Generation:</strong> Provide targeted leads for local retailers or online shops, helping them grow their customer base.</span>
-            </li>
-            <li className="flex items-start">
-              <Brain className="w-5 h-5 text-indigo-600 mr-2 mt-1" />
-              <span><strong>AI Content Creation:</strong> Generate product descriptions, blog posts, and marketing content quickly and professionally.</span>
-            </li>
-          </ul>
-
-          <h2 className="text-2xl font-semibold mb-4">How to Sell This Kit</h2>
-          <ul className="list-disc pl-6 mb-8 text-gray-700 space-y-2">
-            <li>Emphasise increased sales and customer satisfaction from automated follow-ups and 24/7 support.</li>
-            <li>Show how chatbots reduce staff workload and improve the online shopping experience.</li>
-            <li>Highlight the ability to launch professional marketing campaigns with minimal effort.</li>
-            <li>Offer to set up and personalise all automations for the retailer—no tech skills needed for your client.</li>
-          </ul>
-
-          <div className="mt-10 text-center">
-            <a href="/program" className="inline-block bg-sky-600 hover:bg-sky-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300">
-              Get the Business Kit for Retail & E-commerce
-              <ArrowRight className="inline ml-2" />
-            </a>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                question: "What exactly do I get in the Retail & E-commerce Automation Kit?",
-                answer: "You get ready-to-use chatbots, order management automations, customer service tools, marketing templates, and step-by-step guides. Everything is designed so you can quickly set up and offer automation services to retail and e-commerce businesses, even if you have no tech background."
-              },
-              {
-                question: "Do I need any technical skills to use this kit?",
-                answer: "No technical skills are required. The kit includes simple instructions, video walkthroughs, and templates. If you can follow basic steps and use a computer, you can launch your automation business."
-              },
-              {
-                question: "How do I get my first clients?",
-                answer: "The kit comes with proven sales scripts, outreach templates, and marketing materials tailored for retail and e-commerce. You'll also get strategies for finding and closing your first clients, plus access to a support community."
-              },
-              {
-                question: "What support is available if I get stuck?",
-                answer: "You'll have access to detailed documentation, video tutorials, and a private community of other automation kit owners. Plus, you can reach out for help if you need extra guidance."
-              },
-              {
-                question: "How fast can I start making money?",
-                answer: "Most buyers land their first paying client within 2-4 weeks of using the kit, thanks to the included sales materials and step-by-step launch plan."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">What's Included for Retail & E-commerce</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Industry-specific automation solutions designed for retail and e-commerce businesses
+            </p>
           </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {[
+              { icon: MessageSquare, title: "Product Inquiry Bot", desc: "24/7 chatbots for product inquiries" },
+              { icon: Mail, title: "Shopping Cart Automation", desc: "Automated cart abandonment emails" },
+              { icon: Users, title: "Customer Management", desc: "Streamlined customer communication" },
+              { icon: FileText, title: "Retail Content", desc: "Product-specific content templates" }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all border border-gray-100">
+                  <div className="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="w-7 h-7 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16">How Retail & E-commerce Businesses Benefit</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              { icon: Clock, title: "Time Savings", desc: "Reduce customer service time by 70% with automated systems" },
+              { icon: Shield, title: "Customer Satisfaction", desc: "24/7 support improves customer experience" },
+              { icon: Zap, title: "Quick Implementation", desc: "Launch your automation system quickly" },
+              { icon: Users, title: "Revenue Growth", desc: "Increased sales through better engagement" }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="bg-gray-50 rounded-xl p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <h3 className="text-xl font-bold">{item.title}</h3>
+                  </div>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100">
+              <h2 className="text-3xl font-bold mb-6">Client Pitch Template</h2>
+              <p className="text-lg text-gray-700 italic leading-relaxed">
+                "Transform your retail business with our AI automation solution. We'll help you improve customer engagement, increase revenue, and focus on what you do best — selling great products."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Retail?</h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Start your journey to becoming an AI automation expert in the retail sector.
+          </p>
+          <Link
+            href="/program"
+            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Get Started Now
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
     </main>
   );
-} 
+}

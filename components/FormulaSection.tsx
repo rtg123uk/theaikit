@@ -6,31 +6,31 @@ import { Target, Rocket, DollarSign } from "lucide-react";
 const formulaSteps = [
   {
     icon: <Target className="w-8 h-8 text-primary" />,
-    title: "Pick a Profitable Niche",
-    description: "Use our AI-powered niche selector to identify the most promising local business verticals in your region. We've pre-researched 500+ niches to help you choose the perfect market."
+    title: "Identify a Lucrative Market",
+    description: "Utilize our intelligent market analysis tool to pinpoint the most attractive local business sectors in your area. We've conducted preliminary research on 500+ markets to facilitate optimal selection."
   },
   {
     icon: <Rocket className="w-8 h-8 text-primary" />,
-    title: "Deploy the Kit",
-    description: "Install your branded sales assets, outreach templates, and service bundles. Follow our included 30-day plan to launch fast. Everything is white-label and ready to use."
+    title: "Implement the Framework",
+    description: "Set up your customized sales materials, contact templates, and service packages. Execute our comprehensive 30-day strategy to accelerate launch. All resources are white-label and immediately available."
   },
   {
     icon: <DollarSign className="w-8 h-8 text-primary" />,
-    title: "Start Selling Solutions",
-    description: "Deliver high-value services like AI chatbots, voice bots, and booking automations using pre-approved tools we've tested and recommend. No technical skills needed."
+    title: "Begin Offering Services",
+    description: "Provide premium solutions such as conversational AI systems, voice automation, and scheduling tools using validated platforms we've tested and endorse. Technical knowledge not required."
   }
 ];
 
 export default function FormulaSection() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-gray-50 py-20">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            The Simple 3-Step Formula to Launch Your AI Agency
+            The Straightforward Three-Phase Method to Start Your Automation Business
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Building an AI automation agency isn't complicated. It comes down to this proven, repeatable process that's helped hundreds of entrepreneurs start closing deals in days, not months.
+            Creating an automation enterprise isn't complex. It centers on this established, systematic approach that's enabled numerous business owners to begin securing clients in days rather than months.
           </p>
         </div>
 
@@ -52,10 +52,10 @@ export default function FormulaSection() {
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground mb-8">
-            Each step is backed by detailed walkthroughs, checklists, and templates to eliminate guesswork. You'll have everything you need to start closing deals quickly.
+            Every phase includes comprehensive guides, action lists, and ready-to-use templates to remove uncertainty. You'll possess all necessary resources to begin securing clients rapidly.
           </p>
           <Button size="lg" asChild>
-            <Link href="/program">Get the Agency Starter Kit</Link>
+            <Link href="/program">Get The AI Agency Kit</Link>
           </Button>
         </div>
       </div>

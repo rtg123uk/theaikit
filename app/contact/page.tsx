@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2, AlertCircle, X } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare, CheckCircle2, AlertCircle, X, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -36,141 +37,183 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 relative">
-      {/* Thank You Modal Popup */}
-      {isSubmitted && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center relative">
-            <button
-              onClick={() => setIsSubmitted(false)}
-              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 p-2 rounded-full"
-              aria-label="Close thank you popup"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle2 className="w-8 h-8 text-green-500" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
-            <p className="text-gray-600 mb-6">Your message has been sent successfully. We'll get back to you soon.</p>
-            <button
-              onClick={() => setIsSubmitted(false)}
-              className="text-indigo-600 hover:text-indigo-700 font-medium"
-            >
-              Send another message
-            </button>
-          </div>
-        </div>
-      )}
-      {/* Hero Section */}
-      <section className="relative py-12 sm:py-20 flex flex-col items-center justify-center text-center bg-gradient-to-b from-indigo-900 to-purple-900">
-        {/* Subtle Icon in Background */}
-        <MessageSquare className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[320px] h-[200px] sm:h-[320px] text-indigo-800 opacity-10 pointer-events-none z-0" />
-        <div className="relative z-10 max-w-2xl mx-auto px-4">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6">Let's Talk About Building Your AI Agency</h1>
-          <p className="text-lg sm:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
-            Whether you have a question, want to partner, or need help getting started — we're here to help.
-          </p>
-        </div>
-      </section>
-      {/* Contact Section */}
-      <section className="py-12 sm:py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
-            {/* TEAM in a box / Get in Touch Section */}
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Complete Automations Business in a Box</h2>
-              <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">
-                Everything you need to launch and scale your AI agency—done for you, with expert support at every step. Reach out to our team for partnership, support, or to get started.
-              </p>
-              <div className="space-y-4 sm:space-y-6">
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
+    <main className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+      {/* Unique Hero - Split with Form Preview */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full blur-3xl opacity-20"></div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <div className="inline-block bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                  Get In Touch
+                </div>
+                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  Let's Start Your Automation Journey
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  Ready to transform your business with AI automation? Fill out the form and we'll get back to you within 24 hours.
+                </p>
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-indigo-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Email</div>
+                      <div className="text-gray-600">info@theaiagencykit.com</div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 text-sm sm:text-base">Visit Us</h3>
-                    <p className="text-gray-600 text-sm">Manchester, United Kingdom</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Phone</div>
+                      <div className="text-gray-600">Available on request</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <MessageSquare className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900">Response Time</div>
+                      <div className="text-gray-600">Within 24 hours</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            {/* Contact Form */}
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl p-6 sm:p-8">
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                <input type="hidden" name="access_key" value="9cfa6d27-d2d1-4336-a4e4-4274eaff799d" />
-                {/* Honeypot field for spam protection */}
-                <input type="text" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-                {/* Source and Subject fields for tracking */}
-                <input type="hidden" name="source" value="Contact Page" />
-                <input type="hidden" name="subject" value="New Contact Form Submission from Contact Page" />
-                <div>
-                  <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    className="w-full px-3 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                    placeholder="Tell us more about your inquiry..."
-                  ></textarea>
-                </div>
-                {isError && (
-                  <div className="bg-red-50 border border-red-200 text-red-600 px-3 py-2 sm:px-4 sm:py-3 rounded-lg flex items-center gap-2">
-                    <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm">There was an error sending your message. Please try again.</span>
+              
+              {/* Form */}
+              <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                {isSubmitted ? (
+                  <div className="text-center py-12">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle2 className="w-8 h-8 text-green-600" />
+                    </div>
+                    <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+                    <p className="text-gray-600 mb-8">
+                      We've received your message and will get back to you within 24 hours.
+                    </p>
+                    <button
+                      onClick={() => setIsSubmitted(false)}
+                      className="text-indigo-600 hover:text-indigo-700 font-semibold"
+                    >
+                      Send Another Message
+                    </button>
                   </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors"
+                        placeholder="Your full name"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors"
+                        placeholder="your.email@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                        Message *
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={6}
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-indigo-500 focus:outline-none transition-colors resize-none"
+                        placeholder="Tell us about your automation needs..."
+                      />
+                    </div>
+                    {isError && (
+                      <div className="bg-red-50 border-2 border-red-200 rounded-lg p-4 flex items-center gap-3">
+                        <AlertCircle className="w-5 h-5 text-red-600" />
+                        <span className="text-red-700">Something went wrong. Please try again.</span>
+                      </div>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    >
+                      {isLoading ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <Send className="w-5 h-5" />
+                        </>
+                      )}
+                    </button>
+                  </form>
                 )}
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
-                >
-                  {isLoading ? (
-                    <>
-                      <span>Sending...</span>
-                      <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    </>
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </>
-                  )}
-                </button>
-              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Info */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">Why Contact Us?</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle2 className="w-8 h-8 text-indigo-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Expert Guidance</h3>
+                <p className="text-gray-600">
+                  Get personalized advice on which package is right for your business goals.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MessageSquare className="w-8 h-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Quick Response</h3>
+                <p className="text-gray-600">
+                  We respond to all inquiries within 24 hours, usually much faster.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <ArrowRight className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Fast Setup</h3>
+                <p className="text-gray-600">
+                  Once you're ready, we can have you set up and running within days.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
   );
-} 
+}

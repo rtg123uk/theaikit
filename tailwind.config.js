@@ -85,8 +85,8 @@ module.exports = {
         'slide-up': 'slide-up 0.3s ease-out',
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        display: ['var(--font-display)'],
+        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -1,221 +1,160 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight, MessageSquare, Mail, Users, FileText, Clock, Shield, Zap } from 'lucide-react';
+import { ArrowRight, MessageSquare, Mail, Users, FileText, ShoppingBag, ShoppingCart, CheckCircle2, Clock, Shield, Zap } from 'lucide-react';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faStore, faBoxOpen, faTruck } from '@fortawesome/free-solid-svg-icons';
 
 export default function RetailEcommercePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Hero Section */}
-      <section className="relative min-h-[80vh] bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden">
-        {/* Background Grid Pattern */}
-        <div className="absolute inset-0 bg-grid-white/10" />
+    <main className="min-h-screen bg-white">
+      <section className="relative py-24 bg-gradient-to-br from-purple-50 via-white to-pink-50 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-200 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-200 rounded-full blur-3xl opacity-20"></div>
         
-        {/* Main Content */}
-        <div className="relative container mx-auto px-4 py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Launch an AI-Powered Automation Agency for Retail & E-commerce
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Our ready-to-sell business kit gives you everything you need — from customer service to inventory management — tailored for the retail and e-commerce sector.
-            </p>
-
-            {/* Industry Icons */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faShoppingCart} className="w-5 h-5" />
-                <span>E-commerce</span>
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                  <ShoppingBag className="w-4 h-4" />
+                  <span>Retail & E-commerce Industry</span>
+                </div>
+                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  AI Automation Solutions for Retail & E-commerce
+                </h1>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                  Improve customer engagement and increase revenue through smart automation frameworks designed for retail and e-commerce businesses.
+                </p>
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex items-center gap-2 text-gray-700">
+                    <CheckCircle2 className="w-5 h-5 text-purple-600" />
+                    <span className="font-medium">Customer-Focused</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-700">
+                    <CheckCircle2 className="w-5 h-5 text-purple-600" />
+                    <span className="font-medium">Revenue Growth</span>
+                  </div>
+                </div>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Get Started
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faStore} className="w-5 h-5" />
-                <span>Retail</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faBoxOpen} className="w-5 h-5" />
-                <span>Inventory</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-300">
-                <FontAwesomeIcon icon={faTruck} className="w-5 h-5" />
-                <span>Logistics</span>
+              <div className="relative">
+                <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+                      <div className="text-3xl font-bold mb-2">24/7</div>
+                      <div className="text-purple-100">Customer Support</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl p-6 text-white">
+                      <div className="text-3xl font-bold mb-2">30%</div>
+                      <div className="text-pink-100">Revenue Increase</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl p-6 text-white">
+                      <div className="text-3xl font-bold mb-2">Fast</div>
+                      <div className="text-rose-100">Checkout</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 rounded-xl p-6 text-white">
+                      <div className="text-3xl font-bold mb-2">Happy</div>
+                      <div className="text-fuchsia-100">Customers</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What's Inside Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">What's Inside the Kit for This Industry</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                icon: <MessageSquare className="w-8 h-8" />,
-                title: "Customer Service Bot",
-                description: "24/7 chatbots for order tracking and support"
-              },
-              {
-                icon: <Mail className="w-8 h-8" />,
-                title: "Order Management",
-                description: "Automated order processing and tracking"
-              },
-              {
-                icon: <Users className="w-8 h-8" />,
-                title: "Customer Portal",
-                description: "Streamlined shopping and account management"
-              },
-              {
-                icon: <FileText className="w-8 h-8" />,
-                title: "Product Content",
-                description: "AI-generated product descriptions and reviews"
-              }
-            ].map((item, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300">
-                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  {React.cloneElement(item.icon, { className: "w-8 h-8 text-indigo-600" })}
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* What You Can Offer Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">What You Can Offer</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              {
-                icon: <MessageSquare className="w-8 h-8" />,
-                title: "Customer Support",
-                description: "Automated order tracking and customer service"
-              },
-              {
-                icon: <Mail className="w-8 h-8" />,
-                title: "Order Updates",
-                description: "Automated shipping notifications and updates"
-              },
-              {
-                icon: <Users className="w-8 h-8" />,
-                title: "Customer Engagement",
-                description: "AI-powered product recommendations and loyalty"
-              },
-              {
-                icon: <FileText className="w-8 h-8" />,
-                title: "Product Content",
-                description: "Automated product descriptions and marketing"
-              }
-            ].map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 hover:shadow-lg transition-all duration-300">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                    {React.cloneElement(item.icon, { className: "w-6 h-6 text-indigo-600" })}
-                  </div>
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                </div>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How to Sell Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">How to Position This Kit to Win Clients</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                icon: <Clock className="w-8 h-8" />,
-                title: "Time Savings",
-                description: "Reduce customer service tasks by 70% with automated support"
-              },
-              {
-                icon: <Shield className="w-8 h-8" />,
-                title: "Customer Satisfaction",
-                description: "24/7 support and instant order updates"
-              },
-              {
-                icon: <Zap className="w-8 h-8" />,
-                title: "Quick Implementation",
-                description: "Launch your automation system in days, not months"
-              }
-            ].map((item, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  {React.cloneElement(item.icon, { className: "w-8 h-8 text-indigo-600" })}
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Pitch Template */}
-          <div className="mt-12 max-w-3xl mx-auto bg-indigo-50 rounded-xl p-8">
-            <h3 className="text-xl font-semibold mb-4">Client Pitch Template</h3>
-            <p className="text-gray-700 italic">
-              "Transform your retail business with our AI automation solution. We'll help you enhance customer experience, streamline operations, and focus on what you do best — growing your business."
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">What's Included for Retail & E-commerce</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Industry-specific automation solutions designed for retail and e-commerce businesses
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[
-              {
-                question: "Can this integrate with existing e-commerce platforms?",
-                answer: "Yes, our automation solutions can integrate with most popular e-commerce platforms and shopping carts."
-              },
-              {
-                question: "How customizable are the product descriptions?",
-                answer: "All product descriptions and automation scripts are fully customizable to match your brand voice and product catalog."
-              },
-              {
-                question: "How fast can I implement this?",
-                answer: "Most retail businesses can launch their automation system within 1-2 weeks of receiving the kit."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
-              </div>
-            ))}
+              { icon: MessageSquare, title: "Product Inquiry Bot", desc: "24/7 chatbots for product inquiries" },
+              { icon: Mail, title: "Shopping Cart Automation", desc: "Automated cart abandonment emails" },
+              { icon: Users, title: "Customer Management", desc: "Streamlined customer communication" },
+              { icon: FileText, title: "Retail Content", desc: "Product-specific content templates" }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all border border-gray-100">
+                  <div className="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="w-7 h-7 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/10" />
-        <div className="container mx-auto px-4 text-center relative">
-          <h2 className="text-3xl font-bold mb-6">Ready to Transform Retail?</h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Start your journey to becoming an AI automation expert in the retail and e-commerce sector.
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16">How Retail & E-commerce Businesses Benefit</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {[
+              { icon: Clock, title: "Time Savings", desc: "Reduce customer service time by 70% with automated systems" },
+              { icon: Shield, title: "Customer Satisfaction", desc: "24/7 support improves customer experience" },
+              { icon: Zap, title: "Quick Implementation", desc: "Launch your automation system quickly" },
+              { icon: Users, title: "Revenue Growth", desc: "Increased sales through better engagement" }
+            ].map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="bg-gray-50 rounded-xl p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <h3 className="text-xl font-bold">{item.title}</h3>
+                  </div>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-xl p-10 border border-gray-100">
+              <h2 className="text-3xl font-bold mb-6">Client Pitch Template</h2>
+              <p className="text-lg text-gray-700 italic leading-relaxed">
+                "Transform your retail business with our AI automation solution. We'll help you improve customer engagement, increase revenue, and focus on what you do best — selling great products."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Retail?</h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Start your journey to becoming an AI automation expert in the retail sector.
           </p>
-          <Link 
+          <Link
             href="/program"
-            className="inline-block bg-white text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg group"
+            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <span className="flex items-center">
-              Get Started Now
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </span>
+            Get Started Now
+            <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </section>
     </main>
   );
-} 
+}

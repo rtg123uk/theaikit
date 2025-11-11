@@ -10,28 +10,28 @@ import {
 
 const faqs = [
   {
-    question: "Do I need technical skills?",
-    answer: "No. Everything is set up using existing AI tools. You don't need to code or design anything."
+    question: "Is technical expertise required?",
+    answer: "Not at all. All systems are configured using established automation platforms. No programming or design experience necessary."
   },
   {
-    question: "Do I need to build software?",
-    answer: "No. This is a business starter kit that uses top-rated third-party AI platforms. You'll be acting as the expert, not the engineer."
+    question: "Do I need to develop applications?",
+    answer: "No. This is an enterprise package that leverages premium third-party automation services. You'll serve as the consultant, not the developer."
   },
   {
-    question: "Is this a subscription?",
-    answer: "No. You pay once, get lifetime access, and all future updates included."
+    question: "Is this a recurring payment?",
+    answer: "No. Single payment provides permanent access, with all upcoming enhancements included."
   },
   {
-    question: "Can I resell the templates and assets?",
-    answer: "Yes! You can rebrand everything and use it under your own name."
+    question: "Can I rebrand and resell the materials?",
+    answer: "Absolutely! You can customize all content and operate under your own brand identity."
   },
   {
-    question: "How long before I see results?",
-    answer: "Most users send their first outreach within 48–72 hours and close a client in their first 2–4 weeks."
+    question: "When can I expect outcomes?",
+    answer: "Most customers initiate their first contact within 48–72 hours and secure a client within their initial 2–4 weeks."
   },
   {
-    question: "What if I'm not sure which package to choose?",
-    answer: "Book a free 1:1 call and we'll help you work it out. We'll assess your background, goals, and budget to recommend the best option for you. No pressure, just honest advice."
+    question: "What if I'm uncertain about package selection?",
+    answer: "Schedule a complimentary consultation and we'll assist you in determining the right fit. We'll evaluate your experience, objectives, and resources to suggest the optimal choice. No obligation, simply straightforward guidance."
   }
 ];
 
@@ -44,7 +44,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to know about the AI Agency Starter Kit.
+            Everything you need to know about The AI Agency Kit.
           </p>
         </div>
         
