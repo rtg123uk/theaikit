@@ -1,33 +1,23 @@
-import { client } from '@/lib/sanity.client'
 import { MetadataRoute } from 'next'
 
 export const revalidate = 3600 // Revalidate every hour
 
-// Fallback sitemap when Sanity client is not configured
+// Sitemap without Sanity dependency
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://aiagencystartup.com'
-
-  // Get all blog posts
-  const posts = await client.fetch(`
-    *[_type == "post"] | order(publishedAt desc) {
-      slug,
-      _updatedAt,
-      publishedAt,
-      title
-    }
-  `)
-  
-  console.log('Sitemap posts:', posts)
 
   // Static pages
   const pages = [
     '',
     '/about',
-    '/kits',
-    '/success-stories',
-    '/privacy-policy',
-    '/terms',
-    '/cookie-policy'
+    '/why-us',
+    '/markets',
+    '/program',
+    '/testimonials',
+    '/contact',
+    '/legal/privacy-policy',
+    '/legal/terms',
+    '/legal/cookies'
   ]
 
   // Create sitemap entries for pages
@@ -38,13 +28,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: page === '' ? 1 : 0.8
   }))
 
-  // Create sitemap entries for blog posts
-  const postEntries = posts.map((post: any) => ({
-    url: `${baseUrl}/blog/${post.slug.current}`,
-    lastModified: new Date(post._updatedAt),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7
-  }))
+  // Only include blog posts if Sanity is configured
+  let postEntries: MetadataRoute.Sitemap = []
+  
+  if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) {
+    try {
+      const { client } = await import('@/lib/sanity.client')
+      const posts = await client.fetch(`
+        *[_type == "post"] | order(publishedAt desc) {
+          slug,
+          _updatedAt,
+          publishedAt,
+          title
+        }
+      `)
+      
+      postEntries = posts.map((post: any) => ({
+        url: `${baseUrl}/blog/${post.slug.current}`,
+        lastModified: new Date(post._updatedAt),
+        changeFrequency: 'weekly' as const,
+        priority: 0.7
+      }))
+    } catch (error) {
+      console.log('Sanity not configured, skipping blog posts in sitemap')
+    }
+  }
 
   return [...pageEntries, ...postEntries]
 } 
