@@ -741,7 +741,7 @@ export default function LandingNew() {
        />
        
                {/* Sticky Consultation Button */}
-        <ConsultationButton onOpenModal={() => setIsConsultationModalOpen(true)} />
+        <ConsultationButton />
         
         {/* Consultation Modal */}
         <ConsultationModal 
